@@ -45,7 +45,7 @@ public class FlickrFechr {
         return new String(getUrlBytes(urlSpec));
     }
 
-    public void fetchItems(){
+    public String fetchItems(String word){
         try{
             String url= Uri.parse("http://fanyi.youdao.com/openapi.do")
                     .buildUpon()
@@ -54,7 +54,7 @@ public class FlickrFechr {
                     .appendQueryParameter("type","data")
                     .appendQueryParameter("doctype","json")
                     .appendQueryParameter("version","1.1")
-                    .appendQueryParameter("q","good")
+                    .appendQueryParameter("q",word)
                     .build().toString();
             jsonString=getUrlString(url);
 
@@ -62,7 +62,7 @@ public class FlickrFechr {
         }catch (IOException ioe){
             Log.e(TAG,"Failed to fetch items",ioe);
         }
-
+        return jsonString;
     }
 
 }
