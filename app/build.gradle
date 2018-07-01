@@ -1,5 +1,10 @@
 apply plugin: 'com.android.application'
 
+repositories {
+    flatDir {
+        dir 'libs'
+    }
+}
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
@@ -36,4 +41,10 @@ dependencies {
     compile files('libs/YoudaoCnDictOffline.jar')
     compile files('libs/YoudaoTranslateOffline.jar')
     compile files('libs/YoudaoTranslateOnline.jar')
+    compile files('libs/com.baidu.tts_2.3.1.20170808_e39ea89.jar')
+}
+android{
+
+    useLibrary 'org.apache.http.legacy'
+
 }

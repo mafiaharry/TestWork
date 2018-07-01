@@ -8,13 +8,25 @@
     android:orientation="vertical"
     tools:context="com.harry.mytranslation.TestActivity">
 
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
     <EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/test_write"
+    android:text="good"
+    android:hint="please"/>
+    <ImageView
+        android:id="@+id/voice_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/test_write"
-        android:text="good"
-        android:hint="please"/>
+        android:src="@drawable/ic_action_voice"
+        />
+</LinearLayout>
+
     <Button
         android:id="@+id/go_button"
         android:layout_width="wrap_content"
@@ -28,5 +40,37 @@
         android:text="Hello World!"
         android:id="@+id/test_read"
         android:layout_gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="explains"
+        android:id="@+id/test_explains"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true">
+
+            <ImageView
+                android:id="@+id/word_view"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"/>
+
+            <ImageView
+                android:id="@+id/clear_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:src="@drawable/ic_action_clear"/>
+        </FrameLayout>
+    </RelativeLayout>
+
 
 </LinearLayout>
